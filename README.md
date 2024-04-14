@@ -12,8 +12,6 @@ I am currently using this package to scrape single point-in-time metrics from an
 
 ## Usage
 
-This API client library currently supports API tokens for authentication.
-
 ```go
 import scraper "github.com/starttoaster/prometheus-exporter-scraper"
 
