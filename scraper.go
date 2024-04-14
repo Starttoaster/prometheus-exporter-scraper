@@ -35,7 +35,7 @@ type WebScraper struct {
 	url *url.URL
 }
 
-// NewFileScraper returns a new file scraper instance from a given filepath
+// NewWebScraper returns a new web scraper instance from a given url
 func NewWebScraper(urlStr string) (*WebScraper, error) {
 	s := new(WebScraper)
 

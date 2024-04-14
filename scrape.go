@@ -33,6 +33,7 @@ func (s *FileScraper) ScrapeFile() (*ScrapeData, error) {
 	return data, nil
 }
 
+// ScrapeWeb scrapes the url owned by the WebScraper instance and returns some ScrapeData
 func (s *WebScraper) ScrapeWeb() (*ScrapeData, error) {
 	var data *ScrapeData = new(ScrapeData)
 	data.helps = make(map[string]string)
