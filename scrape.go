@@ -43,7 +43,11 @@ func (s *WebScraper) ScrapeWeb() (*ScrapeData, error) {
 	if err != nil {
 		return nil, fmt.Errorf("error making GET to given endpoint \"%s\": %w", s.url.String(), err)
 	}
-	defer resp.Body.Close()
+	defer func() {
+		if err := resp.Body.Close(); err != nil {
+			fmt.Printf("scraper failed to close response body. If you're seeing this in your logs then something unexpected is happening when closing the response body from your prometheus metrics exporter scrape requests. See %v", err)
+		}
+	}()
 
 	// Read response body lines one by one
 	scanner := bufio.NewScanner(resp.Body)
