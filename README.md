@@ -1,5 +1,7 @@
 # prometheus-exporter-scraper
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/starttoaster/prometheus-exporter-scraper)](https://goreportcard.com/report/github.com/starttoaster/prometheus-exporter-scraper) [![Go Reference](https://pkg.go.dev/badge/github.com/starttoaster/prometheus-exporter-scraper.svg)](https://pkg.go.dev/github.com/starttoaster/prometheus-exporter-scraper)
+
 This package is for parsing Prometheus-compliant metrics libraries to Go data types. It relies on regexp to parse line content into structs
 
 Currently supports counter and gauge metrics. Histogram and summary support coming soon.
@@ -30,3 +32,8 @@ for _, gauge := range data.Gauges {
     fmt.Println(data.Type(gauge.Key)) // Print out the type for a particular metric name
 }
 ```
+
+## TODO
+
+- Testing
+- Break up the scanLine function
